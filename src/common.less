@@ -1,0 +1,125 @@
+.settings-container {
+  padding: 10px;
+  background: #f8f8f8;
+  margin: 10px 0;
+}
+
+.example-values,
+.display-settings {
+  display: flex;
+  align-items: center;
+  button {
+    margin-right: 10px;
+    height: 25px;
+  }
+}
+
+.display-settings {
+  margin: 10px 0;
+  button {
+    height: 20px;
+  }
+}
+
+.example-values {
+  margin-top: 10px;
+}
+
+table.simple-table {
+  text-align: center;
+  td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: var(--td-width);
+    height: var(--td-height);
+    line-height: var(--td-height);
+  }
+}
+
+.marker-bits {
+  color: #dc0b17;
+}
+
+.code-point-bits {
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.code-snippet {
+  border: 1px solid #ccc;
+  background: #eee;
+  margin: 3px 2px;
+  display: inline-block;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  font-size: 12px;
+  white-space: nowrap;
+  .number {
+    color: #cf8499;
+  }
+}
+
+@unit: 10px;
+
+.base64 {
+  .row {
+    &.no-bottom {
+      .item-1,
+      .item-6,
+      .item-8,
+      .item-16,
+      .item-24,
+      .item-32 {
+        border-bottom: 0;
+      }
+    }
+    display: flex;
+    .item-1,
+    .item-6,
+    .item-8,
+    .item-16,
+    .item-24,
+    .item-32 {
+      flex-shrink: 0;
+      box-sizing: border-box;
+      border: 1px solid #000;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      border-right: 0;
+      &:last-child {
+        border-right: 1px solid #000;
+      }
+    }
+    .item-1 {
+      width: @unit;
+    }
+    .item-6 {
+      width: @unit * 6;
+      display: flex;
+      &.no-item {
+        display: block;
+      }
+      .item {
+        width: @unit;
+        border-right: 1px solid #ddd;
+        &:last-child {
+          border-right: 0;
+        }
+      }
+    }
+    .item-8 {
+      width: @unit * 8;
+    }
+    .item-16 {
+      width: @unit * 16;
+    }
+    .item-24 {
+      width: @unit * 24;
+    }
+    .item-32 {
+      width: @unit * 32;
+    }
+  }
+}

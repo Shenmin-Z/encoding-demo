@@ -34,7 +34,7 @@ export const Base64: FC<{ str: string }> = ({ str }) => {
     const padded = padding(all.join(""), 6, true);
     return (padded.match(/.{6}/g) as string[]).map((i) => Array.from(i));
   })();
-  const base64Padding = 4 - (groupBy6.length % 4);
+  const base64Padding = 4 - (groupBy6.length % 4 || 4);
 
   return (
     <div style={{ margin: "30px 0" }} className="base64">
@@ -95,6 +95,6 @@ const number2Base64 = (n: number) => {
   if (n <= 51) return String.fromCharCode("a".charCodeAt(0) + n - 26);
   if (n <= 61) return n - 52 + "";
   if (n === 62) return "+";
-  if (n === 64) return "/";
+  if (n === 63) return "/";
   return "?";
 };

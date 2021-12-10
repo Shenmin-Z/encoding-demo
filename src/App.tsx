@@ -29,7 +29,7 @@ const NO_DISPLAY = {
 type DisplayKey = keyof typeof INIT_DISPLAY;
 
 export const App = () => {
-  const [str, setStr] = useState("Hello world");
+  const [str, setStr] = useState("(A a)");
   const [display, setDisplay] = useState(INIT_DISPLAY);
 
   return (
@@ -54,10 +54,10 @@ export const App = () => {
         <div className="example-values">
           <button
             onClick={() => {
-              setStr("Aa ()");
+              setStr("(A a)");
             }}
           >
-            Aa ()
+            (A a)
           </button>
           <button
             onClick={() => {
